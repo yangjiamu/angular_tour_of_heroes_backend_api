@@ -49,4 +49,10 @@ public class HeroController {
         logger.info("delete hero{}", id);
         heroService.deleteHero(id);
     }
+
+    @GetMapping(value = "/api/heroes", params = "name")
+    public List<Hero> heroSearch(@RequestParam(required = true) String name){
+        logger.info("search hero by name {}", name);
+        return heroService.searchHero(name);
+    }
 }

@@ -60,4 +60,8 @@ public class HeroService {
     public void deleteHero(Integer id){
         heroRepository.deleteById(id);
     }
+
+    public List<Hero> searchHero(String name){
+        return heroRepository.findByName(name);
+    }
 }
